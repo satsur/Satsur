@@ -15,7 +15,6 @@ This is the first Git project.
   }
   .CodeLink {
     font-weight: bold;
-    transition: transform 2s ease;
   }
   .CodeLink:link {
     font-weight: bold;
