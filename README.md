@@ -8,7 +8,7 @@ This is the first Git project.
   }
   a:link {
     font-weight: bold;
-    color: white;
+    color: black;
   }
   a:visited {
     font-weight: bold;
