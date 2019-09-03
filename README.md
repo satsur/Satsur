@@ -45,7 +45,7 @@ This is the first Git project.
 
 <script>
   ProjectLinks.onmouseover = function(){
-    document.getElementById("ProjectLinks").value.innerHTML = "Click Me!"
+    document.getElementById("ProjectLinks").value.innerHTML = "Click Me!";
   }
 
 </script>
