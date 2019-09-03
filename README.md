@@ -5,7 +5,7 @@ This is the first Git project.
   #ProjectLinks {
     color: blue;
     text-shadow: 4px 4px 4px #39ff14;
-    transition: transform 2s ease 2s
+    transition: transform 2s ease;
   }
   #ProjectLinks:hover {
     text-shadow: 4px 4px 4px blue;
@@ -32,7 +32,7 @@ This is the first Git project.
   }
   #OtherLinks {
     text-shadow: 4px 4px 4px #fe6603;
-    transition: transform 2s ease 2s;
+    transition: transform 2s ease;
   }
   #OtherLinks:hover {
     text-shadow: 4px 4px 4px red;
