@@ -4,7 +4,7 @@ This is the first Git project.
 <style>
   #ProjectLinks {
     color: blue;
-    text-shadow: 4px 4px 4px black
+    text-shadow: 4px 4px 4px green;
   }
 </style>
 <body>
