@@ -33,6 +33,10 @@ This is the first Git project.
     color: blue;
     text-decoration: underline;
   }
+  .CodeLink::after {
+    content: " - Coding Project"
+    color: gold;
+  }
   #OtherLinks {
     text-shadow: 4px 4px 4px #fe6603;
     transition: transform 2s ease;
