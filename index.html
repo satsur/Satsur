@@ -1,0 +1,148 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form</title>
+</head>
+<style>
+  body {
+    background-color: #0012ff;
+    color: white;
+  }
+  #pageTitle {
+    text-shadow: 4px 6px 4px purple;
+    background-color: white;
+    color: black;
+  }
+  a {
+    color: orange;
+    font-weight: bold;
+  }
+
+</style>
+<body>
+<h1 id="pageTitle">Valdiation Form</h1><br>
+<b>This text is in bold.</b>
+<p>
+<i>This text is in italics.</i><br><br>
+<a href="file:///C:/Users/SanSat/Desktop/Sudoku%20Solver%20Code.html">This is the link to my Sudoku Solver Form</a><br><br>
+<a href="file:///C:/Users/SanSat/Desktop/Tip%20Calculator%20Code.html">This is link to my Tip Calculator Form</a>
+
+<form action="" onsubmit="return validateForm()" method="post">
+
+  <b><i>First name</i></b>: <input type="text" id="First" name="fname" value=""><br> <!--First Name Text-->
+
+  <b><i>Last name</i></b>: <input type="text" id="Last" name="lname" value=""><br> <!--Last Name Text-->
+
+  <b><i>Birthdate (mm/dd/yyyy)</i><b>: <input type="text" id="Date" name="birthDate" value=""><br> <!--Birthdate Text-->
+
+  <b><i>Income($/yr)</i></b>: <input type="number" name="income" value="" required><br> <!--Income Text-->
+
+  <b><i>Phone Number</i></b>: <input type="text" id="Phone" name="phone" value=""><br> <!--Phone Number Text-->
+
+  <b><i>Postal Code</i></b>: <input type="number" id="Postal" name="postalCode" value=""><br><br> <!--Postal Code Text-->
+
+  <input type="submit" value="Submit form"> <!--Submit Button-->
+<script>
+  //let d = new Date();
+  //document.body.innerHTML = "<h1>Today's date is" + d + "</h1>"
+
+function validateForm() {
+  var countFailures = 0;
+  var msgString = "";
+
+
+  //alert("hello");
+
+  var x = document.getElementById("First").value; //First Name
+  var xRGEX = /^[A-Za-z]*$/g; //Regular Expression that makes sure that first name is only letters
+  var xResult = xRGEX.test(x); //Command that tests to make sure that the input follows the format in the regular expression.
+
+
+  var y = document.getElementById("Last").value; //Last Name
+  var yRGEX = /^[A-Za-z]*$/g; //Regular Expression that makes sure that last name is only letters
+  var yResult = yRGEX.test(y); //Command that tests to make sure that the input follows the format in the regular expression.
+
+
+  var d = document.getElementById("Date").value; //Birth Date
+  var dRGEX = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/g
+  var dResult = dRGEX.test(d);
+
+
+  var p = document.getElementById("Phone").value; //Phone Number
+  var pRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/; //Regular expression for phone number
+  var pResult = pRGEX.test(p); //Test to make sure that the input matches the regular expression
+
+
+  var c = document.getElementById("Postal").value; //Postal Code
+  var cRGEX = /^[0-9]{5}(?:-[0-9]{4})?$/; //Regular Expression for Postal Code
+  var cResult = cRGEX.test(c);
+
+
+  if(xResult == true && yResult == true && dResult == true && pResult == true && cResult == true){
+    alert("All the inputted information is valid.  Please verify that this is the correct information: \nFirst Name: " + x + "\nLast name: " + y + "\nBirthdate: " + d + "\nPhone Number: " + p + "\nPostal Code: " + c);
+    var retVal = confirm("If the information has been verified and all of it is correct, you may continue.  Do you wish to continue?");
+    if(retVal == true) {
+      return true;
+    } else {
+    return false;
+    }
+  }
+
+ if (xResult == false) {
+    countFailures++;
+    msgString = msgString + "First Name Input Invalid.\n";
+    //return false;
+  } else if(x == "") {
+    countFailures++;
+    msgString = msgString + "First Name not entered.\n";
+  }
+
+  if (yResult == false) {
+    countFailures++;
+    msgString = msgString + "Last Name Input Invalid.\n";
+    //return false;
+  } else if(y == ""){
+    countFailures++;
+    msgString = msgString + "Last Name not entered\n";
+  }
+
+  if(d == "") {
+    countFailures++;
+    msgString = msgString + "Birthdate not entered.\n";
+  } else if(dResult == false) {
+    countFailures++;
+    msgString = msgString + "Birthdate Input Invalid.\n";
+    //return false;
+  }
+
+  if(p == "") {
+    countFailures++;
+    msgString = msgString + "Phone Number not entered.\n";
+    } else if(pResult == false) {
+    countFailures++;
+    msgString = msgString + "Phone Number Input Invalid.\n";
+    //return false;
+  }
+
+  if(c == ""){
+    countFailures++;
+    msgString = msgString + "Postal Code not entered.\n";
+  } else if(cResult == false) {
+    countFailures++;
+    msgString = msgString + "Postal Code Input Invalid.\n";
+    //return false;
+  }
+
+  if(countFailures === 1) {
+    alert("There is 1 error in the form.  It is displayed below.\n" + msgString);
+    return false;
+  } else{
+    alert("There are " + countFailures + " errors in the form.  They are displayed below.\n" + msgString);
+    return false;
+}
+};
+</script> <!--end of javascript-->
+</form>
+
+</body>
+</html>
