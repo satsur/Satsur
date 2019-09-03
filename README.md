@@ -13,7 +13,7 @@ This is the first Git project.
     transform: scale(1.3);
 
   }
-  .codeLink {
+  .CodeLink {
     font-weight: bold;
     transition: transform 2s ease;
   }
