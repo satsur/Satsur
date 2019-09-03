@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Testing code</title>
+</head>
+<body>
+<input type="text" id="text"><br>
+<span id="output"></span>
+<script>
+  var text = document.getElementById("text");
+  var output = document.getElementById("output");
+
+  text.addEventListener("keydown", function(e) {
+    output.innerHTML = "Keycode: " + e.which + "<br />" + "Keyname: " + e.key;
+    if (e.which == 13) {
+      alert("You pressed Enter!");
+    }
+  });
+
+
+</script>
+
+
+</body>
+</html>

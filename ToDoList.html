@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>To Do List</title>
+</head>
+<style>
+  body {
+    background-color: black;
+  }
+  h1 {
+    text-align: center;
+    color: red;
+    font-size: 50px;
+    text-shadow: 4px 2px 4px white, 8px 4px 4px green;
+    background-color: yellow;
+  }
+
+  #text1 {
+    text-align: center;
+    color: silver;
+    font-size: 15px;
+    font-family: verdana;
+    text-shadow: 4px 6px 4px silver;
+  }
+  #text2 {
+    text-align: center;
+    color: #39ff14;
+    font-size: 15px;
+    font-family: verdana;
+    text-shadow: 4px 6px 4px #39ff14;
+  }
+  #text3 {
+    text-align: center;
+    color: gold;
+    font-size: 15px;
+    font-family: verdana;
+    text-shadow: 4px 6px 4px gold;
+  }
+  #text4 {
+    text-align: center;
+    color: red;
+    font-size: 15px;
+    font-family: verdana;
+    text-shadow: 4px 6px 4px red;
+  }
+  #userInput {
+    width: 50%;
+    height: 30px;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 20px;
+  }
+  #addInput {
+    background-color: purple;
+    color: white;
+    width: 75px; 
+    height: 35px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 1s, background-color 3s, font-size 2s, width 2s, height 2s;
+    transition-timing-function: ease;
+  }
+  #addInput:hover {
+    font-size: 30px;
+    background-color: blue;
+    cursor: pointer;
+    transform: rotate(360deg);
+    width: 90px;
+    height: 50px;
+  }
+  ul {
+    list-style: none;
+    margin: auto;
+  }
+  li {
+    color: white;
+    background-color: blue;
+    font-size: 20px;
+    font-family: verdana;
+    font-weight: bold;
+    text-shadow: 4px 2px 4px #3714FF;
+    border-style: solid;
+    border-color: #ff7000;
+    border-radius: 10px;
+    border-width: 5px;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+  }
+  button {
+    border: none;
+    background: none;
+    float: right;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  button:hover {
+    background: red;
+    color: white;
+  }
+  .delete {
+    display: none;
+  }
+
+</style>
+
+<body>
+  <h1>To-Do List!</h1><br>
+  <p id="text1"><b>Enter your item into the box below to add it to your list</b></p>
+  <p id="text2"><b>Press the "add" button or enter to mark it as complete</b></p>
+  <p id="text3"><b>Click the "X" to remove the item from the list</b></p>
+  <p id="text4"><b>WARNING: IF YOU RELOAD THE PAGE ALL ITEMS WILL BE LOST!</b></p>
+
+  <div style="text-align: center">
+  <input type="text" id="userInput" placeholder="  Enter the items for the To-do list here...">                    
+  <input type="submit" id="addInput" value="Add">
+  </div><br><br>
+
+  <div>
+  <ul id="myList">
+  </ul>
+  </div>
+
+  <script>
+    "use strict";
+
+    var userInput = document.getElementById("userInput");
+    //alert("Hello "+userInput.value);
+
+    document.getElementById("addInput").onclick = function(){addInput("Add button click says")};
+    userInput.addEventListener("keydown", keyhandler);
+
+    function keyhandler(e) {
+      if (e.which == 13) addInput("Enter key says");
+    }
+
+    function addInput(source) {
+      //alert(source + " : " + userInput.value);
+
+      if(userInput.value.length == 0) {
+        alert("You must add input if you want to add it to the list"); 
+        return false;
+      }
+
+      var ul = document.getElementById("myList");
+      //var list = getElementByTagName("li");
+
+      var li = document.createElement("LI");             // Create a <li> node
+      var textnode = document.createTextNode(userInput.value); // Create a text node
+      li.appendChild(textnode);                          // Append the text to <li
+      
+      var delbutton = document.createElement("button");
+      delbutton.appendChild(document.createTextNode("X"));
+      li.appendChild(delbutton);
+      delbutton.addEventListener("click", delListItem);
+      function delListItem() {
+        li.classList.add("delete");
+      };
+
+      ul.appendChild(li); // Append <li> to <ul>
+      userInput.value = "";
+
+    };
+
+  </script>
+
+</body>
+</html>
