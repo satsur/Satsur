@@ -33,7 +33,7 @@ This is the first Git project.
   }
   .CodeLink:active {
     font-weight: bold;
-    color: blue
+    color: blue;
   }
   #OtherLinks {
     text-shadow: 4px 4px 4px #fe6603;
