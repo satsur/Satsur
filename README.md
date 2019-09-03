@@ -13,24 +13,28 @@ This is the first Git project.
     transform: scale(1.3);
 
   }
-
   .CodeLink:link {
     font-weight: bold;
     color: black;
+    text-decoration: none;
+    transition: transform 2s ease;
   }
   .CodeLink:visited {
     font-weight: bold;
     color: purple;
+    text-decoration: none;
   }
   .CodeLink:hover {
     font-weigt: bold;
     color: red;
     cursor: pointer;
+    text-decoration: underline;
     transform: scale(1.3);
   }
   .CodeLink:active {
     font-weight: bold;
     color: blue;
+    text-decoration: underline;
   }
   #OtherLinks {
     text-shadow: 4px 4px 4px #fe6603;
