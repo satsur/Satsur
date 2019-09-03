@@ -69,7 +69,7 @@ This is the first Git project.
     text-decoration: underline;
   }
   .UsefulWebsiteLink::after {
-    content: " - Website Link"
+    content: " - Website Link";
     color: silver;
     text-shadow: none;
   }
