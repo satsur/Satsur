@@ -10,7 +10,7 @@ This is the first Git project.
   #ProjectLinks:hover {
     text-shadow: 4px 4px 4px blue;
     cursor: not-allowed;
-    transform: rotate(360deg);
+    transform: scale(2);
 
   }
   .CodeLink:link {
@@ -37,7 +37,7 @@ This is the first Git project.
   #OtherLinks:hover {
     text-shadow: 4px 4px 4px red;
     cursor: not-allowed;
-    transform: rotate(360deg);
+    transform: scale(2);
   }
 </style>
 <body>
