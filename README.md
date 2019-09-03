@@ -15,7 +15,7 @@ This is the first Git project.
   }
   .codeLink {
     font-weight: bold;
-    transition: transform 2s;
+    transition: transform 2s ease;
   }
   .CodeLink:link {
     font-weight: bold;
@@ -29,7 +29,7 @@ This is the first Git project.
     font-weigt: bold;
     color: red;
     cursor: pointer;
-    transform: scale(1.3)
+    transform: scale(1.3);
   }
   .CodeLink:active {
     font-weight: bold;
