@@ -11,19 +11,19 @@ This is the first Git project.
     text-shadow: 4px 4px 4px blue;
     cursor: not-allowed;
     transform: scale(1.3);
-
+  }
+  .CodeLink {
+    transition: transform 2s ease;
   }
   .CodeLink:link {
     font-weight: bold;
     color: black;
     text-decoration: none;
-    transition: transform 2s;
   }
   .CodeLink:visited {
     font-weight: bold;
     color: purple;
     text-decoration: none;
-    transition: transform 2s;
   }
   .CodeLink:hover {
     font-weigt: bold;
