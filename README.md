@@ -5,10 +5,12 @@ This is the first Git project.
   #ProjectLinks {
     color: blue;
     text-shadow: 4px 4px 4px #39ff14;
+    transition: transform 2s ease 2s
   }
   #ProjectLinks:hover {
-    text-shadow: 4px 4px 4px  #fe6603;
+    text-shadow: 4px 4px 4px blue;
     cursor: not-allowed;
+    transform: rotate(360deg);
 
   }
   .CodeLink:link {
@@ -30,10 +32,12 @@ This is the first Git project.
   }
   #OtherLinks {
     text-shadow: 4px 4px 4px #fe6603;
+    transition: transform 2s ease 2s;
   }
   #OtherLinks:hover {
-    text-shadow: 4px 4px 4px #39ff14;
+    text-shadow: 4px 4px 4px red;
     cursor: not-allowed;
+    transform: rotate(360deg);
   }
 </style>
 <body>
@@ -46,11 +50,9 @@ This is the first Git project.
 <script>
   ProjectLinks.onmouseover = function(){
     document.getElementById("ProjectLinks").innerHTML = "Project Links!";
-    document.getElementById("ProjectLinks").style.textShadow = "4px 4px 4px blue";
   }
   OtherLinks.onmouseover = function(){
     document.getElementById("OtherLinks").innerHTML = "Other Useful Links";
-    document.getElementById("OtherLinks").style.textShadow = "4px 4px 4px blue";
   }
 
 </script>
