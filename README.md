@@ -13,7 +13,7 @@ This is the first Git project.
     transform: scale(1.3);
   }
   .CodeLink {
-    text-shadow: 4px 2px 4px blue;
+    text-shadow: 2px 2px 2px blue;
     font-weight: bold;
   }
   .CodeLink:link {
@@ -43,7 +43,7 @@ This is the first Git project.
     transform: scale(1.3);
   }
   .OtherCodeLink {
-    text-shadow: 4px 2px 4px red;
+    text-shadow: 2px 2px 2px red;
     font-weight: bold;
   }
   .OtherCodeLink:link {
