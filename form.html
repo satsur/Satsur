@@ -6,7 +6,7 @@
 <style>
   body {
     background-color: #0012ff;
-    color: white; 
+    color: white;
   }
   #pageTitle {
     text-shadow: 4px 6px 4px purple;
@@ -23,10 +23,8 @@
 <h1 id="pageTitle">Valdiation Form</h1><br>
 <b>This text is in bold.</b>
 <p>
-<i>This text is in italics.</i><br><br>
-<a href="file:///C:/Users/SanSat/Desktop/Sudoku%20Solver%20Code.html">This is the link to my Sudoku Solver Form</a><br><br>
-<a href="file:///C:/Users/SanSat/Desktop/Tip%20Calculator%20Code.html">This is link to my Tip Calculator Form</a>
-
+<i>This text is in italics/i><br><br>
+<a id="index page link" href="https://satsur.github.io/Satsur">Gp back to the homepage</a> 
 <form action="" onsubmit="return validateForm()" method="post">
 
   <b><i>First name</i></b>: <input type="text" id="First" name="fname" value=""><br> <!--First Name Text-->
@@ -56,12 +54,12 @@ function validateForm() {
   var x = document.getElementById("First").value; //First Name
   var xRGEX = /^[A-Za-z]*$/g; //Regular Expression that makes sure that first name is only letters
   var xResult = xRGEX.test(x); //Command that tests to make sure that the input follows the format in the regular expression.
- 
+
 
   var y = document.getElementById("Last").value; //Last Name
   var yRGEX = /^[A-Za-z]*$/g; //Regular Expression that makes sure that last name is only letters
   var yResult = yRGEX.test(y); //Command that tests to make sure that the input follows the format in the regular expression.
- 
+
 
   var d = document.getElementById("Date").value; //Birth Date
   var dRGEX = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/g
@@ -131,7 +129,7 @@ function validateForm() {
     countFailures++;
     msgString = msgString + "Postal Code Input Invalid.\n";
     //return false;
-  } 
+  }
 
   if(countFailures === 1) {
     alert("There is 1 error in the form.  It is displayed below.\n" + msgString);
@@ -146,10 +144,3 @@ function validateForm() {
 
 </body>
 </html>
-
-
-
-
-
-
-
