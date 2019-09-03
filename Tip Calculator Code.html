@@ -42,56 +42,54 @@
   font-family: verdana;
   color: red;
   }
-  #SudokuSolverLink, #ValidationFormLink {
+  #indexPageLink {
   color: red;
   font-weight: bold;
   font-size: 20px;
+  }
 </style>
 <body>
-<h1>Tip Calculator</h1>
-<p><b>Input your bill amount, and the number of people sharing the bill, and the quality of their service!</p>
+  <h1>Tip Calculator</h1>
+  <p><b>Input your bill amount, and the number of people sharing the bill, and the quality of their service!</p>
 
-<p>Then we will calculate how much <u>each person</u> has to pay <i>and</i> the <u>total tip!</u></b></p>
+  <p>Then we will calculate how much <u>each person</u> has to pay <i>and</i> the <u>total tip!</u></b></p>
 
-<a id="SudokuSolverLink" href="https://satsur.github.io/Satsur/Sudoku%20Solver%20Code.html">This is the link to my Sudoku Solver!</a><br><br>
+  <a id="indexPageLink" href="https://satsur.github.io/Satsur">Go back to homepage</a><br><br>
+  <input id="billamt" type="text" placeholder="Bill Amount in USD"><br><br>
 
-<a id="ValidationFormLink" href="https://satsur.github.io/Satsur/form.html">This is the link to my Validation Form!</a><br><br>
+  <input id="sharebill" type="number" placeholder="How many people are sharing the bill?"><br><br>
 
-<input id="billamt" type="text" placeholder="Bill Amount in USD"><br><br>
+  <select id="quality">
+  <option id="qualityoption1" value="0.05">Terrible (5% Tip)</option>
+  <option id="qualityoption2" value="0.10">Okay (10% Tip)</option>
+  <option id="qualityoption3" value="0.15">Good/Average (15% Tip)</option>
+  <option id="qualityoption4" value="0.20">Very Good (20% Tip)</option>
+  <option id="qualityoption5" value="0.25">Spectacular! (25% Tip)</option>
+  </select> <br><br>
 
-<input id="sharebill" type="number" placeholder="How many people are sharing the bill?"><br><br>
+  <input id="calculate" type="submit" value="Calculate"><br><br><br>
+  <p id="qualPercent"></p>
+  <p id="totalTip"></p>
+  <p id="tipPerPerson"></p>
 
-<select id="quality">
-<option id="qualityoption1" value="0.05">Terrible (5% Tip)</option>
-<option id="qualityoption2" value="0.10">Okay (10% Tip)</option>
-<option id="qualityoption3" value="0.15">Good/Average (15% Tip)</option>
-<option id="qualityoption4" value="0.20">Very Good (20% Tip)</option>
-<option id="qualityoption5" value="0.25">Spectacular! (25% Tip)</option>
-</select> <br><br>
-
-<input id="calculate" type="submit" value="Calculate"><br><br><br>
-<p id="qualPercent"></p>
-<p id="totalTip"></p>
-<p id="tipPerPerson"></p>
-
-<script>
-document.getElementById("calculate").onclick = function() {Calculate()}
-function Calculate() {
-  var billamt = document.getElementById("billamt").value;
-  //alert(billamt);
-  var sharebill = document.getElementById("sharebill").value;
-  //alert(sharebill);
-  var quality = document.getElementById("quality").value;
-  //alert(quality);
-  var totalTip = billamt * quality;
-  var tipPerPerson = totalTip / sharebill;
-  var calcmsg1 = "Tip Percentage: " + quality * 100 + "%";
-  var calcmsg2 = "Total tip: " + "$" + totalTip;
-  var calcmsg3 = "Tip Per Person: " + "$" + tipPerPerson;
-  document.getElementById("qualPercent").innerHTML = calcmsg1;
-  document.getElementById("totalTip").innerHTML = calcmsg2;
-  document.getElementById("tipPerPerson").innerHTML = calcmsg3;
-}
-</script>
+  <script>
+    document.getElementById("calculate").onclick = function() {Calculate()}
+    function Calculate() {
+      var billamt = document.getElementById("billamt").value;
+      //alert(billamt);
+      var sharebill = document.getElementById("sharebill").value;
+      //alert(sharebill);
+      var quality = document.getElementById("quality").value;
+      //alert(quality);
+      var totalTip = billamt * quality;
+      var tipPerPerson = totalTip / sharebill;
+      var calcmsg1 = "Tip Percentage: " + quality * 100 + "%";
+      var calcmsg2 = "Total tip: " + "$" + totalTip;
+      var calcmsg3 = "Tip Per Person: " + "$" + tipPerPerson;
+      document.getElementById("qualPercent").innerHTML = calcmsg1;
+      document.getElementById("totalTip").innerHTML = calcmsg2;
+      document.getElementById("tipPerPerson").innerHTML = calcmsg3;
+    }
+  </script>
 </body>
 </html>

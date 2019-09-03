@@ -55,7 +55,7 @@
   #addInput {
     background-color: purple;
     color: white;
-    width: 75px; 
+    width: 75px;
     height: 35px;
     font-size: 15px;
     font-weight: bold;
@@ -105,7 +105,11 @@
   .delete {
     display: none;
   }
-
+  #indexPageLink {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  }
 </style>
 
 <body>
@@ -114,9 +118,9 @@
   <p id="text2"><b>Press the "add" button or enter to mark it as complete</b></p>
   <p id="text3"><b>Click the "X" to remove the item from the list</b></p>
   <p id="text4"><b>WARNING: IF YOU RELOAD THE PAGE ALL ITEMS WILL BE LOST!</b></p>
-
+  <a id="indexPageLink" href="https://satsur.github.io/Satsur">Go back to homepage</a>
   <div style="text-align: center">
-  <input type="text" id="userInput" placeholder="  Enter the items for the To-do list here...">                    
+  <input type="text" id="userInput" placeholder="  Enter the items for the To-do list here...">
   <input type="submit" id="addInput" value="Add">
   </div><br><br>
 
@@ -142,7 +146,7 @@
       //alert(source + " : " + userInput.value);
 
       if(userInput.value.length == 0) {
-        alert("You must add input if you want to add it to the list"); 
+        alert("You must add input if you want to add it to the list");
         return false;
       }
 
@@ -152,7 +156,7 @@
       var li = document.createElement("LI");             // Create a <li> node
       var textnode = document.createTextNode(userInput.value); // Create a text node
       li.appendChild(textnode);                          // Append the text to <li
-      
+
       var delbutton = document.createElement("button");
       delbutton.appendChild(document.createTextNode("X"));
       li.appendChild(delbutton);
