@@ -80,7 +80,7 @@ This is the first Git project.
 <a class="CodeLink" href="https://satsur.github.io/Satsur/Tip%20Calculator%20Code.html">This is the link to a Tip Calculator Form</a><br><br>
 <a class="CodeLink" href="https://satsur.github.io/Satsur/ToDoList.html">This is the link to a To-Do List</a>
 <h1 id="OtherLinks">Hover over me!</h1>
-<a class="UsefulWebsiteLink" href="https://htmlcolorcodes.com>https://htmlcolorcodes.com/ - Color Picker</a><br><br>
+<a class="UsefulWebsiteLink" href="https://htmlcolorcodes.com">https://htmlcolorcodes.com/ - Color Picker</a><br><br>
 <a class="UsefulWebsiteLink" href="https://www.w3schools.com/">https://www.w3schools.com/ - Reference for all aspects of JS, HTML, CSS etc.</a>
 
 <script>
