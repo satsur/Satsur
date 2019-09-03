@@ -46,14 +46,11 @@ This is the first Git project.
 <script>
   ProjectLinks.onmouseover = function(){
     document.getElementById("ProjectLinks").innerHTML = "Project Links!";
+    document.getElementById("ProjectLinks").style.transition = "4px 4px 4px blue";
   }
   OtherLinks.onmouseover = function(){
-    OtherLinks.onkeydown = function(){myFunction}
-    function myFunction(e){
-      if (e.which == 13) {
-        document.getElementById("OtherLinks").innerHTML = "Other Useful Links!"
-      }
-    }
+    document.getElementById("OtherLinks").innerHTML = "Other Useful Links";
+    document.getElementById("OtherLinks").style.transition = "4px 4px 4px blue";
   }
 
 </script>
