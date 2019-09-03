@@ -13,27 +13,23 @@ This is the first Git project.
     transform: scale(1.3);
   }
   .CodeLink {
-    transition: transform 2s ease;
+    text-shadow: 4px 2px 4px blue;
+    font-weight: bold;
   }
   .CodeLink:link {
-    font-weight: bold;
     color: black;
     text-decoration: none;
   }
   .CodeLink:visited {
-    font-weight: bold;
     color: purple;
     text-decoration: none;
   }
   .CodeLink:hover {
-    font-weigt: bold;
     color: red;
     cursor: pointer;
     text-decoration: underline;
-    transform: scale(1.3);
   }
   .CodeLink:active {
-    font-weight: bold;
     color: blue;
     text-decoration: underline;
   }
@@ -46,6 +42,27 @@ This is the first Git project.
     cursor: not-allowed;
     transform: scale(1.3);
   }
+  .OtherCodeLink {
+    text-shadow: 4px 2px 4px red;
+    font-weight: bold;
+  }
+  .OtherCodeLink:link {
+    color: black;
+    text-decoration: none;
+  }
+  .OtherCodeLink:visited {
+    color: purple;
+    text-decoration: none;
+  }
+  .OtherCodeLink:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .OtherCodeLink:active {
+    color: blue;
+    text-decoration: underline;
+  }
 </style>
 <body>
 <h1 id="ProjectLinks">Hover Over Me!</h1>
@@ -53,6 +70,7 @@ This is the first Git project.
 <a class="CodeLink" href="https://satsur.github.io/Satsur/Tip%20Calculator%20Code.html">This is the link to a Tip Calculator Form</a><br><br>
 <a class="CodeLink" href="https://satsur.github.io/Satsur/ToDoList.html">This is the link to a To-Do List</a>
 <h1 id="OtherLinks">Hover over me!</h1>
+<a class="OtherCodeLink" href="https://htmlcolorcodes.com/">This is the link to a color picker that can list the hexadecimal code and the RGB of any color!</a>
 
 <script>
   ProjectLinks.onmouseover = function(){
