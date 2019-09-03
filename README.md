@@ -23,6 +23,7 @@ This is the first Git project.
     font-weight: bold;
     color: purple;
     text-decoration: none;
+    transition: transform 2s ease;
   }
   .CodeLink:hover {
     font-weigt: bold;
