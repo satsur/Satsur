@@ -13,7 +13,7 @@ This is the first Git project.
     transform: scale(1.3);
   }
   .CodeLink {
-    text-shadow: 6px 6px 4px blue;
+    text-shadow: 6px 7px 4px blue;
     font-weight: bold;
   }
   .CodeLink:link {
@@ -43,7 +43,7 @@ This is the first Git project.
     transform: scale(1.3);
   }
   .UsefulWebsiteLink {
-    text-shadow: 6px 6px 4px red;
+    text-shadow: 6px 7px 4px red;
     font-weight: bold;
   }
   .UsefulWebsiteLink:link {
@@ -71,6 +71,7 @@ This is the first Git project.
 <a class="CodeLink" href="https://satsur.github.io/Satsur/ToDoList.html">This is the link to a To-Do List</a>
 <h1 id="OtherLinks">Hover over me!</h1>
 <a class="UsefulWebsiteLink" href="https://htmlcolorcodes.com/">This is the link to a color picker that can list the hexadecimal code and the RGB of any color!</a>
+<a class="UsefulWebsiteLink" href="https://www.w3schools.com/">This is the link to a website that can teach you all about many languages such as JS and HTML!</a>
 
 <script>
   ProjectLinks.onmouseover = function(){
