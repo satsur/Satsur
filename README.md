@@ -48,7 +48,8 @@ This is the first Git project.
     document.getElementById("ProjectLinks").innerHTML = "Project Links!";
   }
   OtherLinks.onmouseover = function(){
-    OtherLinks.onkeypress = function(e){
+    OtherLinks.onkeypress = function(){myFunction}
+    function myFunction(){
       if(e.which == 13) {
         document.getElementById("OtherLinks").innerHTML = "Other Useful Links!"
       }
