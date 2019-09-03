@@ -50,7 +50,7 @@ This is the first Git project.
   OtherLinks.onmouseover = function(){
     OtherLinks.onkeydown = function(){myFunction}
     function myFunction(e){
-      if(e.which == 13) {
+      if (e.which == 13) {
         document.getElementById("OtherLinks").innerHTML = "Other Useful Links!"
       }
     }
