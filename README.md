@@ -17,13 +17,13 @@ This is the first Git project.
     font-weight: bold;
     color: black;
     text-decoration: none;
-    transition: transform 2s ease;
+    transition: transform 2s;
   }
   .CodeLink:visited {
     font-weight: bold;
     color: purple;
     text-decoration: none;
-    transition: transform 2s ease;
+    transition: transform 2s;
   }
   .CodeLink:hover {
     font-weigt: bold;
