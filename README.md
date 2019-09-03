@@ -8,7 +8,8 @@ This is the first Git project.
   }
   #ProjectLinks:hover {
     text-shadow: 4px 4px 4px  #fe6603;
-    cursor: wait;
+    cursor: not-allowed;
+
   }
   .CodeLink:link {
     font-weight: bold;
@@ -32,7 +33,7 @@ This is the first Git project.
   }
   #OtherLinks:hover {
     text-shadow: 4px 4px 4px #39ff14;
-    cursor: wait;
+    cursor: not-allowed;
   }
 </style>
 <body>
@@ -41,5 +42,12 @@ This is the first Git project.
 <a class="CodeLink" href="https://satsur.github.io/Satsur/Tip%20Calculator%20Code.html">This is the link to a Tip Calculator Form</a><br><br>
 <a class="CodeLink" href="https://satsur.github.io/Satsur/ToDoList.html">This is the link to a To-Do List</a>
 <h1 id="OtherLinks">Other Useful Links</h1>
+
+<script>
+  ProjectLinks.onmouseover = function(){
+    document.getElementById("ProjectLinks").value.innerHTML = "Click Me!"
+  }
+
+</script>
 </body>
 </html>
