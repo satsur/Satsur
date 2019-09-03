@@ -34,7 +34,7 @@ This is the first Git project.
     text-decoration: underline;
   }
   .CodeLink::after {
-    content: " - Coding Project"
+    content: " - Coding Project";
     color: gold;
   }
   #OtherLinks {
