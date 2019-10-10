@@ -18,7 +18,9 @@ This is the first Git project.
   }
   .CodeLink:link {
     color: black;
-    text-decoration: none;
+    text-decoration: none
+    display: inline-block;
+    transition: transform 2s ease;
   }
   .CodeLink:visited {
     color: purple;
@@ -28,6 +30,7 @@ This is the first Git project.
     color: red;
     cursor: pointer;
     text-decoration: underline;
+    transform: scale(1.3);
   }
   .CodeLink:active {
     color: blue;
@@ -54,6 +57,8 @@ This is the first Git project.
   .UsefulWebsiteLink:link {
     color: black;
     text-decoration: none;
+    display: inline-block;
+    transition: transform 2s ease;
   }
   .UsefulWebsiteLink:visited {
     color: purple;
@@ -63,6 +68,7 @@ This is the first Git project.
     color: red;
     cursor: pointer;
     text-decoration: underline;
+    transform: scale(1.3);
   }
   .UsefulWebsiteLink:active {
     color: blue;
