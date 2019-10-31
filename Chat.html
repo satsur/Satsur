@@ -16,7 +16,28 @@
     <h1 style="text-align: center; font-family: cursive; text-decoration: underline;">Chat</h1>
     <h2 style="text-align: center; font-family: cursive, monospace;">Reviews on my other pages!</h2>
     <div class="input-div">
-      <input type="text" name="" value="" placeholder="Enter your comments here..." style="width: 500px; height: auto; word-wrap: normal;">
+      <ul id="chat-list">
+
+      </ul>
+      <input type="text" name="" value="" id="userInput" placeholder="Enter your comments here..." style="width: 500px; height: auto; word-wrap: normal;">
     </div>
+
+    <script type="text/javascript">
+      function pressEnter(e) {
+        if(e.keycode == 13) {
+          appendInput();
+        }
+      }
+
+      function appendInput() {
+        var userInput = document.getElementById("userInput")
+        var ul = document.getElementById("chat-list");
+
+        var li = document.createElement("LI");
+        var textnode = document.createTextNode(userInput.value);
+        li.appendChild(textnode);
+      }
+    </script>
+
   </body>
 </html>
