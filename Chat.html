@@ -28,9 +28,8 @@
     var userInput = document.getElementById("userInput");
     var submit = document.getElementById("submit");
 
-    document.getElementById("submit").onclick = pressEnter(event);
+    document.getElementById("submit").onclick = alert("Alert");
     function pressEnter(event) {
-      alert("what");
       if(event.keycode == 13) {
         appendInput();
       }
