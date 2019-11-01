@@ -23,14 +23,14 @@
     </div>
 
     <script type="text/javascript">
-      function pressEnter(e) {
-        if(e.keycode == 13) {
-          appendInput();
-        }
+    var userInput = document.getElementById("userInput");
+    userInput.addEventListener("keydown", pressEnter);
+    function pressEnter(e) {
+      if(e.keycode == 13) {
+        appendInput();
       }
-
+    }
       function appendInput() {
-        var userInput = document.getElementById("userInput")
         var ul = document.getElementById("chat-list");
 
         var li = document.createElement("LI");
