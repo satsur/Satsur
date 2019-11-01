@@ -16,15 +16,15 @@
     <h1 style="text-align: center; font-family: cursive; text-decoration: underline;">Chat</h1>
     <h2 style="text-align: center; font-family: cursive, monospace;">Reviews on my other pages!</h2>
     <div class="input-div">
-      <ul id="chat-list">
-
-      </ul>
       <input type="text" name="" value="" id="userInput" placeholder="Enter your comments here..." onkeydown="pressEnter(e)" style="width: 500px; height: auto; word-wrap: normal;">
       <button type="button" name="button" id="submit">Hello</button>
     </div>
+    <ul id="chat-list">
+      <p>Hello</p>
+    </ul>
 
     <script type="text/javascript">
-    alert("start of JS")
+    alert("start of JS");
     var userInput = document.getElementById("userInput");
     var submit = document.getElementById("submit");
 
@@ -37,7 +37,6 @@
     };
       function appendInput() {
         var ul = document.getElementById("chat-list");
-
         var li = document.createElement("LI");
         var textnode = document.createTextNode(userInput.value);
         li.appendChild(textnode);
