@@ -17,7 +17,7 @@
     <h2 style="text-align: center; font-family: cursive, monospace;">Reviews on my other pages!</h2>
     <div class="input-div">
       <input type="text" name="" value="" id="userInput" placeholder="Enter your comments here..." onkeydown="pressEnter(e)" style="width: 500px; height: auto; word-wrap: normal;">
-      <button type="button" name="button" id="submit">Hello</button>
+      <button type="button" name="button" id="submit" value="Submit"></button>
     </div>
     <ul id="chat-list">
       <p>Hello</p>
@@ -28,7 +28,7 @@
     var userInput = document.getElementById("userInput");
     var submit = document.getElementById("submit");
 
-    document.getElementById("submit").onclick = alert("Alert");
+    document.getElementById("submit").onclick = appendInput();
     function pressEnter(event) {
       if(event.keycode == 13) {
         appendInput();
