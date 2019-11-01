@@ -31,14 +31,14 @@
       if(event.keycode == 13) {
         appendInput();
       }
-    }
+    };
       function appendInput() {
         var ul = document.getElementById("chat-list");
 
         var li = document.createElement("LI");
         var textnode = document.createTextNode(userInput.value);
         li.appendChild(textnode);
-      }
+      };
     </script>
 
   </body>
