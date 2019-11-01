@@ -24,7 +24,8 @@
 
     <script type="text/javascript">
     var userInput = document.getElementById("userInput");
-    document.addEventListener("keydown", pressEnter);
+
+    userInput.addEventListener("keydown", pressEnter());
     function pressEnter(e) {
       if(e.keycode == 13) {
         appendInput();
