@@ -27,7 +27,7 @@
     var userInput = document.getElementById("userInput");
     var submit = document.getElementById("submit");
 
-    document.getElementById("submit").onclick = pressEnter(onkeydown);
+    document.getElementById("submit").onclick = pressEnter(event);
     function pressEnter(event) {
       alert("what");
       if(event.keycode == 13) {
