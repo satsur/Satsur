@@ -19,13 +19,14 @@
       <ul id="chat-list">
 
       </ul>
-      <input type="text" name="" value="" id="userInput" placeholder="Enter your comments here..." style="width: 500px; height: auto; word-wrap: normal;">
+      <input type="text" name="" value="" id="userInput" placeholder="Enter your comments here..." onkeydown="pressEnter(e)" style="width: 500px; height: auto; word-wrap: normal;">
+      <button type="button" name="button" id="submit"></button>
     </div>
 
     <script type="text/javascript">
     var userInput = document.getElementById("userInput");
-
-    userInput.addEventListener("keydown", pressEnter("keydown"));
+    var submit = document.getElementById("submit");
+    submit.onclick = pressEnter();
     function pressEnter(e) {
       if(e.keycode == 13) {
         appendInput();
