@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Pictionary Word Generator!</title>
+  </head>
+
+  <style media="screen">
+    body {
+      background-color: lightblue;
+    }
+    #title {
+      font-color: black;
+      font-family: "sans-serif", verdana, cursive;
+      text-align: center;
+      text-shadow: 3px 3px 3px red;
+      text-style: underline;
+
+    }
+    #instructions {
+      font-color: black;
+      font-size: 17px;
+      margin-top: 0px;
+      font-family: cursive, verdana, "sans-serif", serif;
+    }
+    .DifficultyDropdown {
+      box-shadow: 3px 3px 2px black;
+      width: 200px;
+    }
+    #FinalWord {
+      font-family: cursive, sans-serif;
+      font-style: bold;
+      font-size: 100px;
+    }
+    button {
+      background-color: black;
+      color: yellow;
+      border-radius: 10px;
+      width: 150px;
+      height: 40px;
+      font-size: 30px;
+    }
+  </style>
+
+  <body>
+    <h1 id="title">Pictionary Word Generator!</h1>
+    <p id="instructions">Hello! This is a random word generator for words from pictionary! You can pick the difficulty from the dropdown below, then press <strong>GENERATE </strong>and the word will pop up in the middle of the screen! You can't miss it!</p>
+    <select class="DifficultyDropdown" name="">
+      <option value=""></option>
+      <option value="Person/Place/Animal">Person/Place/Animal (Yellow)</option>
+      <option value="Object">Object (Blue)</option>
+      <option value="Action">Action (Orange)</option>
+      <option value="Difficult">Difficult (Green)</option>
+      <option value="All Play">All Play (Red)</option>
+    </select>
+<br><br><br>
+    <button type="button" name="Generate" onclick="generate()">Generate</button>
+
+    <p id="FinalWord"></p>
+
+    <script type="text/javascript">
+      "use strict";
+
+      var PersonPlaceAnimalWords = ["School", "Ringworm", "South Pole", "Scotland Yard", "Pinocchio", "Octopus", "Penguin", "Pluto", "Mouse", "Florida", "Killer Whale", "Pond", "President", "Best Man", "Casino", "Wales", "Camel", "Moscow", "Glow worm",
+      "Canary Islands", "Eskimo", "Punk", "Registry Office", "The Beatles", "Garage", "Surgeon", "Black Forest", "Niagara Falls", "Scooby Doo", "Wolf", "Paratrooper", "Finland", "Sea horse", "Dracula", "San Francisco", "Guy Fawkes", "Nelson's Column",
+      "Air Hostess", "Dad", "David Beckham", "Ocean", "Starfish", "Ireland", "Frog", "Woodworm", "Knight", "Delivery Room", "Mother-In-Law", "Chimpanzee", "Matador", "Magician", "Mosque", "Mediterranean", "Hospital", "Mona Lisa", "Space Station", "Husband",
+      "Middle East", "Coronation Street", "Devil's Island", "Tony Blair", "Moon", "Popeye", "Buckingham Palace", "Earth", "Vampire", "North Pole", "Crocodile", "Village", "Squid", "Glastonbury", "Stonehenge", "Hermit Crab", "English Channel", "Japan",
+      "Bottle Bank", "Alps", "Ladybird", "Vietnam", "Caterpillar", "Thatched Cottage, "Peacock", "Bank", "Stork", "Madonna", "Whale", "Conservatory", "Hercules", "Guide Dog", "Shark", "Supermarket", "Siamese Twins", "Anteater", "Snowman", "TV Chef",
+      "Chinese Takeaway", "Werewolf", "Trapeze Artist", "Seagull", "South Africa", "Elvis Presley", "Bathroom", "Porcupine", "Trafalgar Square", "Doorman", "Dungeon", "South America", "Clown", "Sahara Desert", "T-Junction", "Art Gallery", "Angel", "Aviary",
+      "Virgin Islands", "Italy", "Millennium Dome", "Venice", "Boy Scout", "Soldier", "Taj Mahal", "Sleeping Beauty", "Hamster", "Israel", "Tree House", "Pearl Harbor", "Portugal", "Conductor", "Bell Ringer", "Magpie", "Leeds", "Gladiator", "Michael Jackson",
+      "Pacific Ocean", "Fox", "Miner", "Sting Ray", "Sydney", "Tooth Fairy", "Vulture", "Shetland Pony", "Spice Girls", "Planist", "Snooker Hall", "Liverpool", "Mount Everest", "Castle", "Robin Hood", "New York", "Vicar", "Flamingo", "Actor", "Fisherman",
+      "The London Eye", "Chile", "Blue Tit", "Ostrich", "Witch Doctor", "Kingfisher", "Stable", "Rat", "Brazil", "Maggot", "Monastery", "Mother", "Falkland Islands", "Spectator", "Sailor", "Market", "Lobster", "Boat House", "The Three Wise Men", "Dalmation",
+      "Great Britain", "Barn", "Francis Drake", "Snail", "Referee", "Children's Zoo", "Dentist", "Turtle", "Oasis", "Accountant", "Angler", "Sherwood Forest", "Farmer", "Secretary", "Tarantula", "Land's End", "Catfish", "Sheep Dog", "Grand Canyon", "Astronaut",
+      "North Star", "Monkey", "Spain", "Isle of Man", "Hairdresser", "Henry VIII", "Student", "Courtyard", "Slug", "Lake District", "Polar Bear", "Hawaii", "Rain Forest", "Santa Claus", "Terrapin", "Muhammad Ali", "Jaguar", "Goose", "Rattlesnake", "Arc De Triomphe",
+      "Spiderman", "France", "Times Square", "Seaside", "Cowboy"];
+
+      var i = Math.floor(Math.random() * PersonPlaceAnimalWords.length ) + 1;
+      alert(i);
+
+    </script>
+
+  </body>
+</html>
