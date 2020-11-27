@@ -6,7 +6,7 @@
     <title>Pictionary Word Generator!</title>
   </head>
 
-  <style media="screen">
+  <style type="text/css">
     body {
       background-color: lightblue;
     }
@@ -16,7 +16,6 @@
       text-align: center;
       text-shadow: 3px 3px 3px red;
       text-style: underline;
-
     }
     #instructions {
       font-color: black;
@@ -32,6 +31,15 @@
       font-family: cursive, sans-serif;
       font-style: bold;
       font-size: 100px;
+      text-align: center;
+      text-shadow: 4px 3px 5px orange;
+    }
+    #clickCount {
+      font-family: cursive, sans-serif;
+      font-size: 20px;
+      text-align: center;
+      color: red;
+      font-style: bold;
     }
     button {
       background-color: black;
@@ -44,40 +52,113 @@
   </style>
 
   <body>
+
     <h1 id="title">Pictionary Word Generator!</h1>
-    <p id="instructions">Hello! This is a random word generator for words from pictionary! You can pick the difficulty from the dropdown below, then press <strong>GENERATE </strong>and the word will pop up in the middle of the screen! You can't miss it!</p>
-    <select class="DifficultyDropdown" name="">
-      <option value=""></option>
+    <p id="instructions">Hello! This is a random word generator for words from pictionary! You can pick the category from the dropdown below, then press GENERATE and the word will pop up in the middle of the screen! You can't miss it!</p>
+    <select class="DifficultyDropdown" id="DifficultyDropdown" name="">
       <option value="Person/Place/Animal">Person/Place/Animal (Yellow)</option>
       <option value="Object">Object (Blue)</option>
       <option value="Action">Action (Orange)</option>
       <option value="Difficult">Difficult (Green)</option>
       <option value="All Play">All Play (Red)</option>
-    </select>
-<br><br><br>
-    <button type="button" name="Generate" onclick="generate()">Generate</button>
+    </select> <br><br><br>
 
-    <p id="FinalWord"></p>
+    <button type="button" name="button" onclick="Generate()">Generate</button>
+
+    <p id="FinalWord"></p> <!--This is the word that will be randomly generated. The text will be assigned later in the Javascript.-->
+    <p id="clickCount"></p> <!--This is the text for the number of times a word was genereated as long as the user did not reload the page.-->
 
     <script type="text/javascript">
-      "use strict";
+      function myFunction() {
+        alert("Function");
+      }
+      var PPAWords = ["School", "Ringworm", "South Pole", "Scotland Yard", "Pinocchio", "Octopus", "Penguin", "Pluto", "Mouse", "Florida",
+      "Killer Whale", "Pond", "President", "Best Man", "Casino", "Wales", "Camel", "Moscow", "Glow worm", "Canary Islands", "Eskimo",
+      "Punk", "Registry Office", "The Beatles", "Garage", "Surgeon", "Black Forest", "Niagara Falls", "Scooby Doo", "Wolf", "Paratrooper",
+      "Finland", "Sea horse", "Dracula", "San Francisco", "Guy Fawkes", "Nelson's Column", "Air Hostess", "Dad", "David Beckham", "Ocean",
+      "Starfish", "Ireland", "Frog", "Woodworm", "Knight", "Delivery Room", "Mother-In-Law", "Chimpanzee", "Matador", "Magician", "Mosque",
+      "Mediterranean", "Hospital", "Mona Lisa", "Space Station", "Husband", "Middle East", "Coronation Street", "Devil's Island",
+      "Tony Blair", "Moon", "Popeye", "Buckingham Palace", "Earth", "Vampire", "North Pole", "Crocodile", "Village", "Squid",
+      "Glastonbury", "Stonehenge", "Hermit Crab", "English Channel", "Japan", "Bottle Bank", "Alps", "Ladybird", "Vietnam", "Caterpillar",
+      "Thatched Cottage", "Peacock", "Bank", "Stork", "Madonna", "Whale", "Conservatory", "Hercules", "Guide Dog", "Shark", "Supermarket",
+      "Siamese Twins", "Anteater", "Snowman", "TV Chef", "Chinese Takeaway", "Werewolf", "Trapeze Artist", "Seagull", "South Africa",
+      "Elvis Presley", "Bathroom", "Porcupine", "Trafalgar Square", "Doorman", "Dungeon", "South America", "Clown", "Sahara Desert",
+      "T-Junction", "Art Gallery", "Angel", "Aviary", "Virgin Islands", "Italy", "Millennium Dome", "Venice", "Boy Scout", "Soldier",
+      "Taj Mahal", "Sleeping Beauty", "Hamster", "Israel", "Tree House", "Pearl Harbor", "Portugal", "Conductor", "Bell Ringer",
+      "Magpie", "Leeds", "Gladiator", "Michael Jackson", "Pacific Ocean", "Fox", "Miner", "Sting Ray", "Sydney", "Tooth Fairy", "Vulture",
+      "Shetland Pony", "Spice Girls", "Planist", "Snooker Hall", "Liverpool", "Mount Everest", "Castle", "Robin Hood", "New York", "Vicar",
+      "Flamingo", "Actor", "Fisherman", "The London Eye", "Chile", "Blue Tit", "Ostrich", "Witch Doctor", "Kingfisher", "Stable", "Rat",
+      "Brazil", "Maggot", "Monastery", "Mother", "Falkland Islands", "Spectator", "Sailor", "Market", "Lobster", "Boat House",
+      "The Three Wise Men", "Dalmation", "Great Britain", "Barn", "Francis Drake", "Snail", "Referee", "Children's Zoo", "Dentist",
+      "Turtle", "Oasis", "Accountant", "Angler", "Sherwood Forest", "Farmer", "Secretary", "Tarantula", "Land's End", "Catfish",
+      "Sheep Dog", "Grand Canyon", "Astronaut", "North Star", "Monkey", "Spain", "Isle of Man", "Hairdresser", "Henry VIII", "Student",
+      "Courtyard", "Slug", "Lake District", "Polar Bear", "Hawaii", "Rain Forest", "Santa Claus", "Terrapin", "Muhammad Ali", "Jaguar",
+      "Goose", "Rattlesnake", "Arc De Triomphe", "Spiderman", "France", "Times Square", "Seaside", "Cowboy", "Venus", "Squirrel",
+      "Mermaid", "Swan", "Swordfish", "Flying Fish", "Alice in Wonderland", "Big Ben", "Giant", "Cornwall", "Beaver", "Disc-Jockey",
+      "Butler", "Jack Russell", "Empire State Building", "Car-wash", "Hornet", "Tightrope Walker", "Daddy-Longlegs", "Houseboat", "Tiger",
+      "Sherlock Holmes", "Chairman", "Hippopotamus", "Gym", "Rabbit", "St. Patrick", "Tadpole", "Jail", "Windsor Castle", "Basement",
+      "Reindeer", "Scuba Diver", "Paris", "Sardine", "Masseur", "Skunk", "Europe", "Pier", "Germany", "Pier", "Germany", "Beach",
+      "Cathedral", "Nun", "Piranha", "Ghost Town", "Wembley Stadium", "Tower Bridge", "Theatre", "Koala Bear", "Adam & Eve", "Kennel",
+      "Cobra", "10 Downing Street", "Volcano", "Las Vegas", "Cox", "Rhinoceros", "Ant", "Robinson Crusoe", "Hollywood", "Dinosaur",
+      "Dragonfly", "Dump", "Dragonfly", "Dump", "Lighthouse", "Guard Dog", "Highwayman", "Rome", "Bearded Lady", "Church", "Sandwich Bar",
+      "Jurassic Park", "Control Tower", "Switzerland", "Bride", "Donkey", "Convent", "St. George", "Centipede", "Tower of London",
+      "St. Bernard", "Rolf Harris", "Coliseum", "Auctioneer", "Mechanic", "Pirate", "The Simpsons", "Picasso", "Canada", "Tapeworm",
+      "Joan of Arc", "Tapeworm", "Joan of Arc", "Postman", "Antarctic", "Dolphin", "Bumblebee", "Vegetarian", "Frankenstein", "California",
+      "Lamb", "Tusk", "Painter", "Princess Diana", "Fire Station", "Saturn", "Singer", "Puss in Boots", "Termite", "Giraffe", "New Zealand",
+      "The Pink Panther", "Hedgehog", "Orchard", "King Harold", "Library", "Leaning Tower of Pisa", "Aborigine", "Tiger Woods", "Midwife",
+      "Puppy", "Midwife", "Puppy", "Red Square", "Channel Tunnel", "Pilot", "Wildlife Park", "Elephant", "Alligator", "Baker Street",
+      "Computer Hacker", "Box Office", "The Rolling Stones", "Lake", "Post Office", "Mosquito", "Turkey", "Pamela Anderson", "Gibralter",
+      "Brother", "Goldfish", "Bull", "Peter Pan", "Road Runner", "Loch Ness Monster", "Mars", "Cow", "Yeti", "West Minister", "India",
+      "Carnival", "India", "Carnival", "Prince William", "Australia", "Parrot", "Cowgirl", "Hotel", "Napoleon", "Bowling Alley", "Pub",
+      "Batman", "Receptionist", "James Bond", "Pig Sty", "Orphan", "Owl", "Body Builder", "Butterfly", "Winston Churchill", "Walrus",
+      "Convict", "Badger", "Tramp", "Bridesmaid", "Greengrocer", "Rose Garden", "Ferret", "Cemetery", "Valley", "Wicket-Keeper",
+      "The Pope", "Panda", "Bristol", "Woodpecker", "King Canute", "Carpenter", "Shed", "China"];
 
-      var PersonPlaceAnimalWords = ["School", "Ringworm", "South Pole", "Scotland Yard", "Pinocchio", "Octopus", "Penguin", "Pluto", "Mouse", "Florida", "Killer Whale", "Pond", "President", "Best Man", "Casino", "Wales", "Camel", "Moscow", "Glow worm",
-      "Canary Islands", "Eskimo", "Punk", "Registry Office", "The Beatles", "Garage", "Surgeon", "Black Forest", "Niagara Falls", "Scooby Doo", "Wolf", "Paratrooper", "Finland", "Sea horse", "Dracula", "San Francisco", "Guy Fawkes", "Nelson's Column",
-      "Air Hostess", "Dad", "David Beckham", "Ocean", "Starfish", "Ireland", "Frog", "Woodworm", "Knight", "Delivery Room", "Mother-In-Law", "Chimpanzee", "Matador", "Magician", "Mosque", "Mediterranean", "Hospital", "Mona Lisa", "Space Station", "Husband",
-      "Middle East", "Coronation Street", "Devil's Island", "Tony Blair", "Moon", "Popeye", "Buckingham Palace", "Earth", "Vampire", "North Pole", "Crocodile", "Village", "Squid", "Glastonbury", "Stonehenge", "Hermit Crab", "English Channel", "Japan",
-      "Bottle Bank", "Alps", "Ladybird", "Vietnam", "Caterpillar", "Thatched Cottage, "Peacock", "Bank", "Stork", "Madonna", "Whale", "Conservatory", "Hercules", "Guide Dog", "Shark", "Supermarket", "Siamese Twins", "Anteater", "Snowman", "TV Chef",
-      "Chinese Takeaway", "Werewolf", "Trapeze Artist", "Seagull", "South Africa", "Elvis Presley", "Bathroom", "Porcupine", "Trafalgar Square", "Doorman", "Dungeon", "South America", "Clown", "Sahara Desert", "T-Junction", "Art Gallery", "Angel", "Aviary",
-      "Virgin Islands", "Italy", "Millennium Dome", "Venice", "Boy Scout", "Soldier", "Taj Mahal", "Sleeping Beauty", "Hamster", "Israel", "Tree House", "Pearl Harbor", "Portugal", "Conductor", "Bell Ringer", "Magpie", "Leeds", "Gladiator", "Michael Jackson",
-      "Pacific Ocean", "Fox", "Miner", "Sting Ray", "Sydney", "Tooth Fairy", "Vulture", "Shetland Pony", "Spice Girls", "Planist", "Snooker Hall", "Liverpool", "Mount Everest", "Castle", "Robin Hood", "New York", "Vicar", "Flamingo", "Actor", "Fisherman",
-      "The London Eye", "Chile", "Blue Tit", "Ostrich", "Witch Doctor", "Kingfisher", "Stable", "Rat", "Brazil", "Maggot", "Monastery", "Mother", "Falkland Islands", "Spectator", "Sailor", "Market", "Lobster", "Boat House", "The Three Wise Men", "Dalmation",
-      "Great Britain", "Barn", "Francis Drake", "Snail", "Referee", "Children's Zoo", "Dentist", "Turtle", "Oasis", "Accountant", "Angler", "Sherwood Forest", "Farmer", "Secretary", "Tarantula", "Land's End", "Catfish", "Sheep Dog", "Grand Canyon", "Astronaut",
-      "North Star", "Monkey", "Spain", "Isle of Man", "Hairdresser", "Henry VIII", "Student", "Courtyard", "Slug", "Lake District", "Polar Bear", "Hawaii", "Rain Forest", "Santa Claus", "Terrapin", "Muhammad Ali", "Jaguar", "Goose", "Rattlesnake", "Arc De Triomphe",
-      "Spiderman", "France", "Times Square", "Seaside", "Cowboy"];
+      var objWords = ["Investopedia", "Watch", "Television", "Headphones", "Stock Market"];
 
-      var i = Math.floor(Math.random() * PersonPlaceAnimalWords.length ) + 1;
-      alert(i);
+      var clickCount = 0; //This is the counter for the number of times that the GENERATE button is clicked, or the number of times a word is generated.
+      var PPAcount = 0; //This is the number of times that a Person/Place/Animal word is generated.
+      var PPAlogicArr = new Array(PPAWords.length).fill(0); //This array applies to each word and tells whether or not that word has already been generated.
+      var objCount = 0;
+      var objLogicArr = new Array(objWords.length).fill(0);
 
+      function Generate() {
+        //alert(document.getElementById("DifficultyDropdown").value);
+
+        var dropdownVal = document.getElementById("DifficultyDropdown"); //This is the dropdown menu for the categories
+        var finalWord = document.getElementById("FinalWord");
+
+        if(dropdownVal.value == "Person/Place/Animal") {//If the user selected this category, the program will choose a random word from that specific array,
+          var i = Math.floor(Math.random() * PPAWords.length); //This makes the selection random
+          //alert(PPAWords[i]);
+          if (PPAcount == PPAWords.length) {
+            alert("Please reload the page to resume word selection!");
+            return false;
+          }
+          while(PPAlogicArr[i] == 1) {
+            i = Math.floor(Math.random() * PPAWords.length);
+          }
+          finalWord.innerHTML = PPAWords[i];//This is just displaying it on the screen. This plugs the final word value into the p tag that was established before in the HTML.
+          PPAlogicArr[i] = 1;
+          PPAcount++;
+        }
+        if(dropdownVal.value == "Object") {
+          var i = Math.floor(Math.random() * objWords.length)
+          if (objCount == objWords.length) {
+            alert("Please reload the page to resume word selection");
+            return false;
+          }
+          while(objLogicArr[i] == 1) {
+            i = Math.floor(Math.random() * objWords.length);
+          }
+          finalWord.innerHTML = objWords[i];
+          objLogicArr[i] = 1;
+          objCount++;
+        }
+
+        clickCount++; //These two lines of code should be the last in the entire generate() function.
+        document.getElementById("clickCount").innerHTML = "Number of words generated: " + clickCount;
+      }
     </script>
 
   </body>

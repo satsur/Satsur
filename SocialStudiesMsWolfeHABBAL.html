@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HABBAL Project More Info</title>
+    <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800&display=swap" rel="stylesheet">
+    <style media="screen" type="text/css">
+      body {
+        background-color: skyblue;
+        margin: 0;
+
+      }
+
+      h1 {
+        text-align: center;
+        font-family: cursive;
+        position: relative;
+        top: 90px;
+
+      }
+      h2 {
+        text-align: center;
+        font-family: cursive;
+        position: relative;
+        top: 95px;
+      }
+      #sidebarRight {
+        border-radius: 5px;
+        display: inline;
+        background-color: yellow;
+        top: 130px;
+        right: 30px;
+        position: absolute;
+        width: 200px;
+        height: 400px;
+        text-align: center;
+        display: inline;
+      }
+      #topbar {
+        background-color: black;
+        position: fixed;
+        top: 1px;
+        width: 100%;
+        transition: top 0.3s;
+        height: 100px;
+        box-shadow: 8px 8px 6px red;
+        text-align: center;
+        z-index: 1
+      }
+      #topbar a {
+        font-style: bold;
+        color: white;
+        font-family: "Coda Caption", sans-serif;
+        font-size: 20px;
+        line-height: 100px;
+        display: inline-block;
+        width: 220px;
+        float: left;
+      }
+
+      #topbar a:hover {
+          background-color: grey;
+          color: #39ff14;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div id="topbar">
+      <a href="https://satsur.github.io/Satsur/">Homepage</a>
+      <a href="#">Some other link</a>
+      <a href="#">Some other link</a>
+    </div>
+    <div id="sidebarRight">
+      <p style="font-size: 30px; position: relative; top: -20px; font-family: 'Modak', cursive;">Skip to...</p>
+      <a href="#">(Heading)</a>
+    </div>
+    <h1>More Information on Clear Cutting </h1>
+    <h2>For Ms. Wolfe's Social Studies class</h2>
+    <script type="text/javascript">
+      var topbar = document.getElementById("topbar");
+      var prevScrollPos = window.pageYOffset;
+      window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollPos > currentScrollPos) {
+            topbar.style.top = "2px";
+        } else {
+            topbar.style.top = "-110px";
+        }
+        prevScrollPos = currentScrollPos;
+      };
+
+    </script>
+  </body>
+</html>

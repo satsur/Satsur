@@ -4,11 +4,71 @@
 <meta charset="UTF-8">
 <title>Testing code</title>
 </head>
-<body>
+<body><!--
   <p><b>Hi</b></p>
   <a id="Form Link" href="https://satsur.github.io/Satsur/form.html">This is the link to the first HTML page assigned by: Rajan Uncle</a><br><br>
   <a href="https://satsur.github.io/Satsur/Tip%20Calculator%20Code.html">This is the link to a Tip Calculator Form</a><br><br>
   <a href="https://satsur.github.io/Satsur/ToDoList.html">This is the link to a To-Do List</a>
+  <button type="button" name="button" onclick="myFunction()"></button>
+  <script type="text/javascript">
+  function myFunction() {
+    alert("Function");
+  }
+  </script>-->
+<!--<button type="button" name="button" onclick="myFunction()">Click Me!</button>-->
 
+<script type="text/javascript">
+  /*var a = ["red", "blue", "green", "yellow", "orange"];
+  let arr = new Array(a.length).fill(0);
+  var count = 0;
+  function myFunction() {
+    var n = Math.floor(Math.random() * 5);
+    if(count == a.length) {
+      alert("Reload the page to restart the selection!");
+      return false;
+    }
+    while(arr[n] == 1) {
+      n = Math.floor(Math.random() * 5);
+    }
+      arr[n] = 1;
+      count++;
+      alert(arr);
+  }*/
+  alert("JS");
+  function getData(){       //this will read file and send information to other function
+    var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xmlhttp.onreadystatechange = function () {
+      document.write(xmlhttp.readyState + " " + xmlhttp.status + "<p>");
+      //while (xmlhttp.readyState != 4);
+      document.write(xmlhttp.readyState + " " + xmlhttp.status + "<p>");
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var lines = xmlhttp.responseText;    //*here we get all lines from text file*
+        alert(xmlhttp.responseText);
+        intoArray(lines);     //here we call function with parameter "lines*"
+      }
+    }
+
+    //xmlhttp.open("GET", "C:\Users\SanSat\Documents\Satsur\Input.txt", false);
+    xmlhttp.open("GET", "input.txt", true);
+    xmlhttp.send();
+  }
+
+  function intoArray (lines) {
+     // splitting all text data into array "\n" is splitting data from each new line
+     //and saving each new line as each element*
+     alert("Array");
+     var lineArr = lines.split('\n');
+
+     //just to check if it works output lineArr[index] as below
+     document.write(lineArr[2]);
+     document.write(lineArr[3]);
+     alert(lineArr[2]);
+     alert(lineArr[3]);
+  }
+
+  alert("Hello");
+  getData();
+
+</script>
 </body>
 </html>

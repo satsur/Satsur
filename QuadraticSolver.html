@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quadratic Equation Solver</title>
+  </head>
+  <style media="screen">
+    body {
+      font-family: cursive;
+      background-color: #c60ddb;
+    }
+    .VarValue {
+      width: 50px;
+      margin-right: 20px;
+    }
+    button {
+      font-size: 20px;
+      color: black;
+      background-color: white;
+      font-style: bold;
+      border-radius: 5px;
+      font-family: verdana;
+
+    }
+  </style>
+  <body>
+      <p>Hello! Having trouble with quadratic equations? Well, you've come to the
+         right place. Enter the equation below and fill in the values for a, b, and c.</p>
+        <p>Insert your equation here:</p>
+        <input type="text" name="" value="" id="EquationInput"><br><br>
+        a = <input type="number" name="" value="" class = "VarValue" id="AValue">
+        b = <input type="number" name="" value="" class = "VarValue" id="BValue">
+        c = <input type="number" name="" value="" class = "VarValue" id="CValue"><br><br>
+        <button type="button" name="button" onclick="Solve()">Solve</button>
+        <div class="Answer">
+          <p id="AnswerText">The answer is: </p>
+        </div>
+
+
+
+
+
+        <script type="text/javascript">
+            var EquationInput = document.getElementById("EquationInput");
+            var a = document.getElementById("AValue");
+            var b = document.getElementById("BValue");
+            var c = document.getElementById("CValue");
+
+            function Solve(a, b, c) {
+              var AnsOne = ((-1 * b) + Math.sqrt(Math.pow(b, 2) - 4*a*c))/2*a;
+              document.getElementById("AnswerText").innerHTML = AnsOne + "And";
+            }
+
+        </script>
+  </body>
+</html>
